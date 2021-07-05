@@ -1,7 +1,7 @@
 package com.example.springcrud;
 
-import com.example.springcrud.dao.EmployeeDao;
-import com.example.springcrud.model.Employee;
+import com.example.springcrud.dao.PersonaDao;
+import com.example.springcrud.model.Persona;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,17 +13,17 @@ public class SpringCrudApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringCrudApplication.class, args);
 
-		EmployeeDao employeeDao = applicationContext.getBean(EmployeeDao.class);
-		employeeDao.createEmployee(getEmployee());
+		PersonaDao personaDao = applicationContext.getBean(PersonaDao.class);
+		personaDao.crearPersona(getpersona());
 	}
 
-	private static Employee getEmployee(){
-		Employee employee = new Employee();
-		employee.setEmployeeName("SEAN");
-		employee.setEmail("sean.cs@gmail.com");
-		employee.setGender("Male");
-		employee.setSalary(9999.00);
-		return employee;
+	private static Persona getpersona(){
+		Persona persona = new Persona();
+		persona.setNombre_persona("OSCAR");
+		persona.setEmail_persona("oscar@gmail.com");
+		persona.setGenero_persona("masculino");
+		persona.setEdad_persona(24);
+		return persona;
 	}
 
 }
